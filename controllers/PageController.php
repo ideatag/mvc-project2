@@ -18,7 +18,7 @@ class PageController
             $continut = $_POST['continut'];
             $data = $_POST['data'];
             Page::create($name, $continut, $data);
-            header("Location: /page/list");
+            header("Location: http://localhost/mvc-project2/page/list");
         } else {
             require "views/header.php";
             require "views/addPage.php";
@@ -33,7 +33,7 @@ class PageController
             $continut = $_POST['continut'];
             $data = $_POST['data'];
             Page::update($id, $name, $continut, $data);
-            header("Location: /page/list");
+            header("Location: http://localhost/mvc-project2/page/list");
         } else {
             $page = Page::getPageById($id);
             if ($page) {
@@ -49,7 +49,7 @@ class PageController
     public function delete($id)
     {
         Page::delete($id);
-        header("Location: /page/list");
+        header("Location: http://localhost/mvc-project2/page/list");
     }
 
     public function show($id)
@@ -62,5 +62,12 @@ class PageController
         } else {
             echo "Page not found.";
         }
+    }
+
+    public function home()
+    {
+        require "views/header.php";
+        require "views/home.php";
+        require "views/footer.php";
     }
 }

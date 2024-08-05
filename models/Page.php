@@ -19,10 +19,8 @@ class Page
         $stmt->execute();
         $result = $stmt->get_result();
         $page = $result->fetch_assoc();
-        var_dump($page);
         return $page;
     }
-
 
     public static function create($name, $continut, $data)
     {
