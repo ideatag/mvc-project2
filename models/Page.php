@@ -10,16 +10,6 @@ class Page
         return $conn->query($sql);
     }
 
-    // public static function getPageById($id)
-    // {
-    //     global $conn;
-    //     $sql = "SELECT * FROM pagini WHERE id = ? AND deleted_at IS NULL";
-    //     $stmt = $conn->prepare($sql);
-    //     $stmt->bind_param("i", $id);
-    //     $stmt->execute();
-    //     return $stmt->get_result()->fetch_assoc();
-    // }
-
     public static function getPageById($id)
     {
         global $conn;
@@ -29,7 +19,7 @@ class Page
         $stmt->execute();
         $result = $stmt->get_result();
         $page = $result->fetch_assoc();
-        var_dump($page); // Debugging output
+        var_dump($page);
         return $page;
     }
 
