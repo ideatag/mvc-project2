@@ -1,0 +1,18 @@
+<h1 style="font-family: Arial, sans-serif; text-align: center;">Edit Page</h1>
+<form method="post" action="/page/edit/<?= $page['id']; ?>" style="max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px;">
+    <div style="margin-bottom: 12px;">
+        <label for="name" style="font-family: Arial, sans-serif;">Name:</label><br>
+        <input type="text" id="name" name="name" value="<?= $page['name']; ?>" required style="width: 100%; padding-top:8px; padding-bottom:8px; border: 1px solid #ccc; border-radius: 4px;">
+    </div>
+    <div style="margin-bottom: 12px;">
+        <label for="continut" style="font-family: Arial, sans-serif;">Continut:</label><br>
+        <textarea id="continut" name="continut" required style="resize: none; height: 72px; width: 100%; padding-top:8px; padding-bottom:8px;  margin-right:8px; border: 1px solid #ccc; border-radius: 4px;"><?= $page['continut']; ?></textarea>
+    </div>
+    <div style="margin-bottom: 12px;">
+        <label for="data" style="font-family: Arial, sans-serif;">Data:</label><br>
+        <input type="datetime-local" id="data" name="data" value="<?= date('Y-m-d\TH:i', strtotime($page['data'])); ?>" required style="width: 100%; padding-top:8px; padding-bottom:8px; border: 1px solid #ccc; border-radius: 4px;">
+    </div>
+    <div style="text-align: center;">
+        <input type="submit" value="Save Changes" style="padding: 10px 20px; background-color: #007bff; color: #fff; border: none; border-radius: 5px; font-family: Arial, sans-serif;">
+    </div>
+</form>
